@@ -10,3 +10,6 @@ USER www
 VOLUME /log
 WORKDIR /app
 EXPOSE 8080
+
+ENTRYPOINT ["/usr/local/bin/python"]
+CMD ["run.py"]
