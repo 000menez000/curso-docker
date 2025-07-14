@@ -16,7 +16,7 @@ logging.basicConfig(
     format="%(asctime)s - %(levelname)s - %(message)s",
     level=logging.INFO
 )
-logging.getlogger().addHandler(logging.StreamHandler())
+logging.getLogger().addHandler(logging.StreamHandler())
 logging.info('inicializando...')
 PORT = 8080
 
