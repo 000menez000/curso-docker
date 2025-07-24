@@ -4,8 +4,6 @@ import os
 import psycopg2
 from bottle import Bottle, request
 
-SQL = 'INSERT INTO emails (assunto, mensagem) VALUES (%s, %s)'
-
 class Sender(Bottle):
     def __init__(self):
         super().__init__()
@@ -25,6 +23,7 @@ class Sender(Bottle):
         
 
     def register_message(self, assunto, mensagem):
+        SQL = 'INSERT INTO emails (assunto, mensagem) VALUES (%s, %s)'
         cur = self.conn.cursor()
         cur.execute(SQL, (assunto, mensagem))
         self.conn.commit()
